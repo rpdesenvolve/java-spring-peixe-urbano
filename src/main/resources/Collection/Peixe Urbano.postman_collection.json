@@ -1,0 +1,524 @@
+{
+	"info": {
+		"_postman_id": "5fff62a7-48cf-4b67-a447-975740a7e732",
+		"name": "Peixe Urbano",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5737560"
+	},
+	"item": [
+		{
+			"name": "Deal",
+			"item": [
+				{
+					"name": "Get Deals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deal?page=0&size=10&sort=id,DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deal"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "id,DESC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Deal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQZWl4ZSBVcmJhbm8gQVBJIiwic3ViIjoiMSIsImlhdCI6MTY2NDE1ODQ3MywiZXhwIjoxNjY0MjQ0ODczfQ.Ux3fiCWufl5QI3jpr-YPBdHs5AvBD4319NMrLS4x2D4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"List 1\",\r\n    \"text\": \"Frigideira de Alumínio com Revestimento Cerâmico de 20cm, 24cm ou 28cm.\",\r\n    \"type\": \"PRODUTO\",\r\n    \"publishDate\": \"2022-09-25\",\r\n    \"endDate\": \"2022-10-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/deal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Deal by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deal/23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deal",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Detail by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQZWl4ZSBVcmJhbm8gQVBJIiwic3ViIjoiMSIsImlhdCI6MTY2NDA0NjI1OCwiZXhwIjoxNjY0MTMyNjU4fQ.TjJc_1eSfEeARumo5wmC0IDwaspV7EiFIFROROLTiMs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Cache 2\",\r\n    \"text\": \"Frigideira de Alumínio com Revestimento Cerâmico de 20cm, 24cm ou 28cm. novo\",\r\n    \"type\": \"PRODUTO\",\r\n    \"endDate\": \"2022-10-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/deal/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deal",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Total Sold Detail by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQZWl4ZSBVcmJhbm8gQVBJIiwic3ViIjoiMSIsImlhdCI6MTY2NDE0ODEzOCwiZXhwIjoxNjY0MjM0NTM4fQ.OBxiu112RIn0BdwkiwpmlAR8qzLbRkjS9kupZLCbexA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"totalSold\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/deal/totalSold/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deal",
+								"totalSold",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Add Option Detail by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQZWl4ZSBVcmJhbm8gQVBJIiwic3ViIjoiMSIsImlhdCI6MTY2NDA0OTIzNCwiZXhwIjoxNjY0MTM1NjM0fQ.90KMLGs-KD7oLE-oV-taUlrIZiNCXBiqLZcKHtZ0kNI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"buyOptionDTOList\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/deal/option/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deal",
+								"option",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Deal by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQZWl4ZSBVcmJhbm8gQVBJIiwic3ViIjoiMSIsImlhdCI6MTY2NDE1NzI1OCwiZXhwIjoxNjY0MjQzNjU4fQ.HE1uox-ieSKaG9SgQV_cqhMUqHyG60M0ezFZ923NR-k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deal/23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deal",
+								"23"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Buy Option",
+			"item": [
+				{
+					"name": "Get Buy Option",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/buyoption?page=0&size=10&sort=id,DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buyoption"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "id,DESC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Buy Option",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQZWl4ZSBVcmJhbm8gQVBJIiwic3ViIjoiMSIsImlhdCI6MTY2NDE1ODQ3MywiZXhwIjoxNjY0MjQ0ODczfQ.Ux3fiCWufl5QI3jpr-YPBdHs5AvBD4319NMrLS4x2D4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Frigideira de 24 cm - Sem Tampa. Frigideira de Alumínio com Revestimento Cerâmico de 24cm.\",\r\n    \"normalPrice\": \"109.90\",\r\n    \"percentageDiscount\": \"10\",\r\n    \"quantityCupom\": \"50\",\r\n    \"startDate\": \"2022-09-22\",\r\n    \"endDate\": \"2022-10-01\",\r\n    \"buyOptionList\": {\r\n        \"deal_id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/buyoption",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buyoption"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Buy Option by Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/buyoption/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buyoption",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Buy Option by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQZWl4ZSBVcmJhbm8gQVBJIiwic3ViIjoiMSIsImlhdCI6MTY2MzkxNTg0MywiZXhwIjoxNjY0MDAyMjQzfQ.qi4V1hOFIUEp-gOMew7j5CDvT0WWHq2skIoSRoGHiFA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Frigideira de 24 cm - Sem Tampa. Frigideira de Alumínio com Revestimento Cerâmico de 24cm. update\",\r\n    \"normalPrice\": \"109.90\",\r\n    \"salePrice\": \"98.91\",\r\n    \"percentageDiscount\": \"11\",\r\n    \"quantityCupom\": \"50\",\r\n    \"endDate\": \"2022-10-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/buyoption/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buyoption",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Sell Unit Option by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQZWl4ZSBVcmJhbm8gQVBJIiwic3ViIjoiMSIsImlhdCI6MTY2NDE0NzMxMiwiZXhwIjoxNjY0MjMzNzEyfQ.7_w5xjmFVWLdyRlz2w5iOtPQEhDnxBYvL1q_56FMtzY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantityCupom\": \"50\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/buyoption/sellunit/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buyoption",
+								"sellunit",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Buy Option by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQZWl4ZSBVcmJhbm8gQVBJIiwic3ViIjoiMSIsImlhdCI6MTY2NDE0MjUyOSwiZXhwIjoxNjY0MjI4OTI5fQ.17wxWhzTB2MAbvyJ6NYty3--SALJDDQMCcSux27Y5mY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/buyoption/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buyoption",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authenticate",
+			"item": [
+				{
+					"name": "Post Auth",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tester@test.com\",\r\n    \"password\": \"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
